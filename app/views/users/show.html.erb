@@ -1,0 +1,59 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span2">
+    <div>      
+        <%= gravatar_for @user %> 
+    </div>
+  </aside>
+  <aside class="show">
+      <div>
+        <table>
+          <tr>
+            <td> Username </td>
+            <td><%=  @user.name.capitalize! %> </td>
+          </tr>       
+          <tr>
+            <td>Email </td>
+            <td><%=  @user.email %></td> 
+          </tr>
+          <tr>
+            <td>Birthday</td>
+            <td><%=  @user.birthday %></td> 
+          </tr> 
+          <tr>
+            <td>Position </td>
+            <td><%=  @user.position %> </td>
+          </tr>
+          <tr>
+            <td>Current Team </td>
+            <td><%= @user.team.name %> </td>
+          </tr>
+          <tr>
+            <td>Current Project </td> 
+            <td><% @user.user_projects.each do |user_project| %>
+                 <%= user_project.project.name %>
+              <% end %>
+            </td>
+          </tr> 
+          <tr>
+            <td>Skills </td>
+              <p>
+                <table border="1px solid grey">
+                <tr>
+                  <td>Name</td>
+                  <td>Level</td>    
+                  <td>Experience(year)</td>
+                </tr>
+                <% @user.user_skills.each do |user_skill| %>
+                  <tr>
+                   <td><%= user_skill.skill.description %></td>
+                   <td><%= user_skill.level %></td>
+                   <td><%= user_skill.usedyear %></td>
+                  </tr>
+                <% end %>            
+                </table>
+              </p>
+            </tr>
+      </div>
+  </aside>  
+</div>

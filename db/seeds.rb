@@ -40,3 +40,4 @@ skill_list = [["Java",1],["C",2],["Ruby on Rails",3],["Git",4],["SQL",5],["PHP",
 skill_list.each do |description,id|
   Skill.create(description: description)
 end
+
