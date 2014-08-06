@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   has_many :user_projects
   has_many :user_skills
   belongs_to :team
-
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   validates :name, presence: true, length: {maximum: 20}
