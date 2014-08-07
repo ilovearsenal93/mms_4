@@ -1,0 +1,11 @@
+<% provide(:title, "#{@team.name}") %>
+<h1><%= @team.name %></h1>
+<h5>Description</h5>
+<p><%= @team.description %></p>
+<h5>Members </h5>
+<ul class="users">
+  <% if @members.any? %>
+    <%= render @members %>
+  <% end %>
+</ul>
+<%= will_paginate @members%>
