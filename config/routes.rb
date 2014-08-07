@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   
+
   root  'static_pages#home'
   resources :users
   match '/help',    to: 'static_pages#help',    via: 'get'

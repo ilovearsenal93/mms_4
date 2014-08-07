@@ -1,10 +1,9 @@
-<% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
-
+<% provide(:title, "Edit admin") %>
+<h1> Update profile </h1>
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+  <%= form_for [:admin, @user] do |f| %>
+    <%= render 'shared/error_messages' %>
 
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -14,6 +13,9 @@
 
       <%= f.label :birthday %>
       <%= f.text_field :birthday %>
+
+       <%= f.label :position %>
+      <%= f.text_field :position %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>

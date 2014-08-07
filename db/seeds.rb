@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 project_list = [["Training Management System","TMS",Date.new(2014,7,14),Date.new(2014,8,1),1],["Members Management System","MMS",Date.new(2014,8,2),Date.new(2014,8,14),1],
 ["E-Learning System","ELS",Date.new(2014,7,14),Date.new(2014,8,14),2]]
 project_list.each do |name,shortname,start_date,end_date,team_id|
