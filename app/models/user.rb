@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessor :not_validates_password
-  has_many :user_projects
-  has_many :user_skills
   belongs_to :position
+  has_many :user_projects, dependent: :destroy
+  has_many :user_skills, dependent: :destroy
   belongs_to :team
   before_save { self.email = email.downcase }
   before_create :create_remember_token

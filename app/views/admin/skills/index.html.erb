@@ -1,0 +1,12 @@
+<% provide(:title, "All skill") %>
+<h1>All skills</h1>
+<section>
+  <%= render "shared/skill_form" %>
+</section>
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @skills %>
+</ul>
+
+<%= will_paginate %>

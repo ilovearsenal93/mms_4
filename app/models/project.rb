@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  has_many :user_projects
+  has_many :user_projects, dependent: :destroy
   belongs_to :team
   validates :name, presence: true, length: {maximum: 30}
   validates :shortname, presence: true, length: {maximum: 10}

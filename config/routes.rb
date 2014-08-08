@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     resources :users
     resources :positions
+    resources :skills, only: [:create,:index,:destroy,:edit,:update]
+    resources :users do
+      resources :user_skills
+    end
   end
   resources :teams, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,12 +1,23 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
+	<section>
+	  <h1>
+		<%= gravatar_for @user %>
+		<%= @user.name %>
+	  </h1>
+	</section>
   </aside>
-</div>
+<% if @user.admin == 0 %>
+  <aside class="span8">
+	<ul class="users">
+	  <% @user_skills.each do |user_skill| %>
+	  <p>
+	  <%= user_skill.skill.description %> - <%= user_skill.usedyear %> years experienced - level <%= user_skill.level %>  </p>
+	  <% end %> 
+	</ul>
 
+	<%= will_paginate @user_skills %>
+  </aside>
+	<% end %>
+</div>

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-position_list = [["Intership","Intership"],["Administrator","Admin"]]
+position_list = [["Internship","Internship"],["Administrator","Admin"]]
 position_list.each do |name,abbr|
   Position.create(name: name, abbreviation: abbr)
 end

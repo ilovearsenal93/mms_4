@@ -1,0 +1,5 @@
+ <p><%= link_to skill.description, edit_admin_skill_path(skill) %> |
+ <%= link_to "delete", admin_skill_path(skill),  method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: skill.description %>
+</p>
