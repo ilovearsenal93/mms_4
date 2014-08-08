@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+position_list = [["Intership","Intership"],["Administrator","Admin"]]
+position_list.each do |name,abbr|
+  Position.create(name: name, abbreviation: abbr)
+end
 project_list = [["Training Management System","TMS",Date.new(2014,7,14),Date.new(2014,8,1),1],["Members Management System","MMS",Date.new(2014,8,2),Date.new(2014,8,14),1],
 ["E-Learning System","ELS",Date.new(2014,7,14),Date.new(2014,8,14),2]]
 project_list.each do |name,shortname,start_date,end_date,team_id|
@@ -15,18 +19,18 @@ team_list = [["ICT_K56_Team1","Class ICT_K56's Team1"],["ICT_K56_Team2","Class I
 team_list.each do |name,description|
   Team.create(name: name, description: description)
 end
-user_list = [["NguyenVanA","NguyenVanA@gmail.com",Date.new(1993,8,21),"Intership",0,1,"123456","123456"],
-["NguyenVanB","NguyenVanB@gmail.com",Date.new(1993,8,22),"Intership",0,1,"123456","123456"],
-["NguyenVanC","NguyenVanC@gmail.com",Date.new(1993,8,23),"Intership",0,1,"123456","123456"],
-["NguyenVanD","NguyenVanD@gmail.com",Date.new(1993,8,24),"Intership",0,2,"123456","123456"],
-["NguyenVanE","NguyenVanE@gmail.com",Date.new(1993,8,25),"Intership",0,2,"123456","123456"]
+user_list = [["NguyenVanA","NguyenVanA@gmail.com",Date.new(1993,8,21),1,0,1,"123456","123456"],
+["NguyenVanB","NguyenVanB@gmail.com",Date.new(1993,8,22),1,0,1,"123456","123456"],
+["NguyenVanC","NguyenVanC@gmail.com",Date.new(1993,8,23),1,0,1,"123456","123456"],
+["NguyenVanD","NguyenVanD@gmail.com",Date.new(1993,8,24),1,0,2,"123456","123456"],
+["NguyenVanE","NguyenVanE@gmail.com",Date.new(1993,8,25),1,0,2,"123456","123456"]
 ]
-user_list.each do |name,email,birthday,position,admin,team_id,password,password_confirmation|
-  User.create(name: name, email: email, birthday: birthday, position: position, admin: admin, team_id: team_id,password: password, password_confirmation: password_confirmation)
+user_list.each do |name,email,birthday,position_id,admin,team_id,password,password_confirmation|
+  User.create(name: name, email: email, birthday: birthday, position_id: position_id, admin: admin, team_id: team_id,password: password, password_confirmation: password_confirmation)
 end
-admin_list = [["NguyenVanF","NguyenVanF@gmail.com",Date.new(1993,8,26),"Administrator",1,"123456","123456"]]
-admin_list.each do |name,email,birthday,position,admin,team_id,password,password_confirmation|
-  User.create(name: name, email: email, birthday: birthday, position: position, admin: admin,password: password, password_confirmation: password_confirmation)
+admin_list = [["NguyenVanF","NguyenVanF@gmail.com",Date.new(1993,8,26),2,1,"123456","123456"]]
+admin_list.each do |name,email,birthday,position_id,admin,password,password_confirmation|
+  User.create(name: name, email: email, birthday: birthday, position_id: position_id, admin: admin,password: password, password_confirmation: password_confirmation)
 end
 
 user_skill_list = [[1,1,1,1],[1,2,1,1],[1,3,1,1],[2,2,1,1],[2,3,1,1],[2,4,1,1],[3,1,1,1],[3,5,1,1],[3,6,1,1],[4,2,1,1],[4,4,1,1],[4,5,1,1],[5,3,1,1],[5,4,1,1],[5,6,1,1]]
@@ -41,4 +45,3 @@ skill_list = [["Java",1],["C",2],["Ruby on Rails",3],["Git",4],["SQL",5],["PHP",
 skill_list.each do |description,id|
   Skill.create(description: description)
 end
-

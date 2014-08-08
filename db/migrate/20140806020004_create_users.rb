@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.date :birthday
-      t.string :position
+      t.integer :position_id
       t.integer :admin, default: 0
       t.integer :team_id 
       t.string :password_digest

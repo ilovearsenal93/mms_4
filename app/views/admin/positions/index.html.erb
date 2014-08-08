@@ -1,0 +1,22 @@
+<% provide(:title, 'All Positions') %>
+<h1>All Positions</h1>
+
+
+<ul class="users">
+  <div class = "row">
+    <aside class="span6">
+      <section>
+	    <h3>Positions</h3>
+        <% @admin.each do |position| %>
+          <li>
+            <%= link_to position.name, admin_position_path(position.id) %>
+            | <%= link_to "edit", edit_admin_position_path(position)%>
+            | <%= link_to "delete", admin_position_path(position), method: :delete, data: { confirm: "You sure?" } %>
+          </li>          
+        <% end %>
+        <br></br>
+        <p><%= link_to "Create new position", new_admin_position_path %> </p>
+      </section>
+    </aside>	
+  </div>
+</ul>

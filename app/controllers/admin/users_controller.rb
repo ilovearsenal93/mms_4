@@ -61,6 +61,6 @@ class Admin::UsersController < ApplicationController
       redirect_to(root_path) unless admin_user?(current_user)
     end
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :position)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :position_id)
     end
 end
